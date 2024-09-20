@@ -24,9 +24,9 @@ function getCSS(filename:string) {
 
 app.use(express.static(path.join(dir, 'public')));
 
-app.get('/fonts.css', (req, res) => {
+app.get('/', (req, res) => {
   res.type('text/css');
-  res.send(`/* JustWhatever Font Manager */\n${fs.readdirSync(path.join(dir, 'public', "font")).filter(e => e.endsWith('.woff2')).map(e => getCSS(e)).join('\n')}`);
+  res.send(`${fs.readdirSync(path.join(dir, 'public', "font")).filter(e => e.endsWith('.woff2')).map(e => getCSS(e)).join('\n')}`);
 });
 
 
