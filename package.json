@@ -13,7 +13,7 @@
     "@types/node": "^22.5.5"
   },
   "scripts": {
-    "start": "(npx tsc && node build/app.js) || exit 1",
+    "start": "ts-node ./api/app.ts || exit 1",
     "dev": "nodemon"
   },
   "author": "net.justwhatever",
