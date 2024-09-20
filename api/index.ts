@@ -9,8 +9,6 @@ const dir = process.cwd();
 
 const app = express();
 
-console.log("Test")
-
 function getCSS(filename:string) {
   const italic:boolean = filename.split("-").length > 1 && filename.split("-")[1].split(".")[0] === 'italic';
   return `
