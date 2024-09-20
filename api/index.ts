@@ -9,17 +9,7 @@ const dir = process.cwd();
 
 const app = express();
 
-function download(url:string,out:string) {
-  const file = fs.createWriteStream(out);
-  let getFunc = url.startsWith('https') ? https.get : http.get
-  getFunc(url, function(response) {
-    response.pipe(file);
-    file.on("finish", () => {
-      file.close();
-      console.log("Download Completed");
-    });
-  });
-}
+console.log("Test")
 
 function getCSS(filename:string) {
   const italic:boolean = filename.split("-").length > 1 && filename.split("-")[1].split(".")[0] === 'italic';
