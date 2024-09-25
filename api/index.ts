@@ -11,8 +11,7 @@ const app = express();
 
 function getCSS(filename:string) {
   const italic:boolean = filename.split("-").length > 1 && filename.split("-")[1].split(".")[0] === 'italic';
-  return `
-@font-face {
+  return `@font-face {
   font-family: '${filename.split("-")[0].split(".")[0].split("_").join(" ")}';
   font-style: ${italic ? 'italic' : 'normal'};
   font-weight: 100-900;
